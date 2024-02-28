@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Login =() => {
     const url=`${import.meta.env.VITE_API_BASE_URL}/api`
+    console.log(url)
     const nameRef=useRef()
     const passRef=useRef()
     const navigate=useNavigate()
