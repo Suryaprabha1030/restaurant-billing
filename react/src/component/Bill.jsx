@@ -27,35 +27,61 @@ const addToCart = (item) => {
 }
 // get data using axios
 const nonvegmain=async(e)=>{
+
     e.preventDefault()
-    const res=await axios.get(url+"/nonvegmain")
-    console.log(res)
-    setData(res.data)
+    try{
+        const res=await axios.get(url+"/nonvegmain")
+        console.log(res)
+        setData(res.data)
+    }
+    catch(err){
+        toast.error("data failed to fetch")
+    }
 }
 const vegmain=async(e)=>{
     e.preventDefault()
-    const res=await axios.get(url+"/vegmain")
-    console.log(res)
-    setData(res.data)
+    try{
+        const res=await axios.get(url+"/vegmain")
+        console.log(res)
+        setData(res.data)
+    }
+    catch(err){
+        toast.error("data failed to fetch")
+    }
 }
 const vegs=async(e)=>{
     e.preventDefault()
-    const res=await axios.get(url+"/vegs")
-    console.log(res)
-    setData(res.data)
+    try{
+        const res=await axios.get(url+"/vegs")
+        console.log(res)
+        setData(res.data)
+    }
+    catch(err){
+        toast.error("data failed to fetch")
+    }
 }
 const nonvegs=async(e)=>{
     e.preventDefault()
-    const res=await axios.get(url+"/nonvegs")
-    console.log(res)
-    setData(res.data)
+    try{
+        const res=await axios.get(url+"/nonvegs")
+        console.log(res)
+        setData(res.data)
+    }
+    catch(err){
+        toast.error("data failed to fetch")
+    }
 }
 const all=async(e)=>{
 
     e.preventDefault()
-    const res=await axios.get(url+"/bill")
-    console.log(res)
-    setData(res.data)
+    try{
+        const res=await axios.get(url+"/bill")
+        console.log(res)
+        setData(res.data)
+    }
+    catch(err){
+        toast.error("data failed to fetch")
+    }
 }
 // total function
 const calculateTotal = () => {

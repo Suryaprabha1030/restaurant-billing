@@ -18,7 +18,9 @@ const Menu = () => {
     },[])
 
     const add=async(e)=>{
+
         e.preventDefault()
+        try{
         const data={
            name: nameRef.current.value,
            variety:varRef.current.value,
@@ -34,7 +36,13 @@ const Menu = () => {
         qtyRef.current.value=""
         toast.success("data added succesfully",{
             position: "top-center",
-            autoClose:8000 })}
+            autoClose:8000 })
+     }
+
+     catch(err){
+        toast.error("data failed to added")
+     }
+    }
 
     const getData=async(e)=>{
         const res=await axios.get(url+"/bill")
@@ -44,8 +52,8 @@ const Menu = () => {
 
     const rowdata=(u)=>{
        setselectdata(u)
-
     }
+
     const editdata=()=>{
         nameRef.current.value=""
         varRef.current.value=""
@@ -60,6 +68,7 @@ const Menu = () => {
     }
 
     const update=async(e)=>{
+        try{
         const id=selectdata.id
         e.preventDefault()
         const data={
@@ -74,15 +83,20 @@ const Menu = () => {
         nameRef.current.value=""
         varRef.current.value=""
         catRef.current.value=""
-       priceRef.current.value=""
+         priceRef.current.value=""
         qtyRef.current.value=""
         toast.success("data updated succesfully",{
             position: "top-center",
             autoClose:8000 })
+     }
 
+
+    catch(err){
+        toast.error("data failed to update")
     }
-
+}
     const deletedata=async(e)=>{
+        try{
         const id=selectdata.id
         e.preventDefault()
         const res=await axios.delete(url+"/bill/"+id)
@@ -90,7 +104,10 @@ const Menu = () => {
         toast.success("data deleted successfully",{
             position: "top-center",
             autoClose:8000
-        })
+        })}
+        catch(err){
+            toast.error("data failed to delete")
+        }
 
 
     }
