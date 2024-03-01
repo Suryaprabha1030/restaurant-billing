@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import {BrowserRouter,Routes,Route} from "react-router-dom"
-import Login from './component/login.jsx'
+import Login from './component/index.jsx'
 import Bill from './component/Bill.jsx'
 import Menu from './component/Menu.jsx'
 import Admin from './component/admin.jsx'
